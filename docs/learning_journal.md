@@ -87,6 +87,9 @@ Setup project structure and FastAPI backend
 - `backend/app/rag/ingestion_pipeline.py`
 
 ### Git Commit
+```
+Implement PDF ingestion pipeline with parsing, cleaning, chunking and metadata
+```
 
 ### Next Session
 - Improve chunking strategy
