@@ -47,3 +47,49 @@ Setup project structure and FastAPI backend
 - Text extraction using PyMuPDF
 - Text cleaning
 - Document chunking
+
+## Day 2 - Document Processing Pipeline
+
+**Date:** 28 June 2026
+
+### Objectives
+- Parse PDF documents.
+- Extract readable text.
+- Clean extracted text.
+- Split documents into chunks.
+- Design metadata models.
+
+### Work Completed
+- Learned how PDFs store information.
+- Built a PDF parser using PyMuPDF.
+- Built a text cleaning service.
+- Implemented an overlapping text chunker.
+- Designed a `DocumentChunk` model using dataclasses.
+- Built the ingestion pipeline architecture.
+
+### Concepts Learned
+- PDF internals
+- Document & Page objects
+- Raw text extraction
+- Text preprocessing
+- Single Responsibility Principle
+- Overlapping chunking
+- Metadata
+- Dataclasses
+- Object composition
+- Ingestion pipelines
+
+### Files Added
+- `backend/app/services/pdf_parser.py`
+- `backend/app/services/text_cleaner.py`
+- `backend/app/services/text_chunker.py`
+- `backend/app/models/document_chunk.py`
+- `backend/app/rag/ingestion_pipeline.py`
+
+### Git Commit
+
+### Next Session
+- Improve chunking strategy
+- Generate embeddings
+- Store embeddings in ChromaDB
+- Semantic similarity search
