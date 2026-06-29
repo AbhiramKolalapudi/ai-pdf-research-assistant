@@ -15,14 +15,15 @@ class IngestionPipeline:
 
         parser = PDFParser(pdf_path)
 
-        raw_text = parser.extract_text()
+        pages = parser.extract_text()
 
-        clean_text = self.cleaner.clean(raw_text)
+        for page in pages:
+            page.text = self.cleaner.clean(page.text)
 
         document_name = Path(pdf_path).name
 
         chunks = self.chunker.chunk(
-            clean_text,
+            pages,
             document=document_name
         )
 
