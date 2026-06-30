@@ -167,3 +167,72 @@ Implement semantic search with embeddings and ChromaDB
 - Build the Retrieval-Augmented Generation (RAG) pipeline.
 - Generate answers using retrieved context.
 - Expose the functionality through FastAPI endpoints.
+
+## Day 4 - Retrieval-Augmented Generation (RAG) & LLM Integration
+
+**Date:** 30 June 2026
+
+### Objectives
+- Review and improve the backend architecture.
+- Introduce centralized application configuration.
+- Connect semantic retrieval with a Large Language Model.
+- Build the Retrieval-Augmented Generation (RAG) pipeline.
+- Generate grounded answers using retrieved document context.
+
+### Work Completed
+- Introduced centralized configuration using `pydantic-settings`.
+- Learned the purpose of `.env` and `.env.example`.
+- Built a `Settings` object for application configuration.
+- Refactored `EmbeddingService` to use centralized settings.
+- Refactored `VectorStore` to use configurable settings and retrieval parameters.
+- Designed and implemented a `Prompt` model.
+- Built a `PromptBuilder` service for prompt engineering.
+- Integrated Google's Gemini API using the new `google-genai` SDK.
+- Built an `LLMService`.
+- Built a `RAGService` to orchestrate retrieval, prompt construction and answer generation.
+- Built a `KnowledgeBaseService` to encapsulate document ingestion and indexing.
+- Successfully generated answers from uploaded PDFs using Retrieval-Augmented Generation.
+- Reviewed and refined the backend architecture by separating ingestion and retrieval workflows.
+
+### Concepts Learned
+- Large Language Models (LLMs)
+- Prompt Engineering
+- System Prompt vs User Prompt
+- Retrieval-Augmented Generation (RAG)
+- Google Gemini API
+- Environment variables
+- `.env` and `.env.example`
+- Centralized configuration
+- `pydantic-settings`
+- Value Objects
+- Orchestrator pattern
+- Integration testing
+- Separation of ingestion and retrieval workflows
+- Backend architecture and service orchestration
+
+### Files Added
+- `backend/app/settings.py`
+- `backend/app/models/prompt.py`
+- `backend/app/services/prompt_builder.py`
+- `backend/app/services/llm_service.py`
+- `backend/app/services/knowledge_base_service.py`
+- `backend/app/rag/rag_service.py`
+- `backend/tests/test_rag.py`
+
+### Files Modified
+- `backend/app/services/embedding_service.py`
+- `backend/app/services/vector_store.py`
+- `backend/.env.example`
+- `backend/requirements.txt`
+
+### Git Commit
+```
+Implement Retrieval-Augmented Generation with Gemini LLM integration
+```
+
+### Next Session
+- Build FastAPI upload endpoint.
+- Build question-answer endpoint.
+- Connect backend services with FastAPI.
+- Test the API using Swagger UI.
+- Review and polish the overall project architecture.
