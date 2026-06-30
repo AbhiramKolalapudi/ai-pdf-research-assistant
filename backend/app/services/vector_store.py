@@ -3,17 +3,17 @@ import chromadb
 from app.models.document_chunk import DocumentChunk
 from app.models.search_result import SearchResult
 from app.services.embedding_service import EmbeddingService
+from app.settings import settings
 
 
 class VectorStore:
 
     def __init__(
-        self,
-        db_path: str = "./chroma_db"
+        self
     ):
 
         self.client = chromadb.PersistentClient(
-            path=db_path
+            path=settings.chroma_db_path
         )
 
         self.collection = self.client.get_or_create_collection(
@@ -66,8 +66,11 @@ class VectorStore:
     def search(
         self,
         query: str,
-        top_k: int = 5
+        top_k: int | None = None
     ) -> list[SearchResult]:
+        
+        if top_k is None:
+            top_k = settings.top_k
 
         query_embedding = self.embedding_service.embed(
             query
