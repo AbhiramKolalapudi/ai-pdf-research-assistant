@@ -236,3 +236,69 @@ Implement Retrieval-Augmented Generation with Gemini LLM integration
 - Connect backend services with FastAPI.
 - Test the API using Swagger UI.
 - Review and polish the overall project architecture.
+
+## Day 5 - FastAPI API Layer & Backend Integration
+
+**Date:** 1 July 2026
+
+### Objectives
+- Expose the RAG pipeline through a REST API.
+- Build PDF upload and question-answer endpoints.
+- Learn FastAPI architecture and dependency injection.
+- Connect the backend services with FastAPI.
+- Test the complete backend using Swagger UI.
+
+### Work Completed
+- Designed the API layer using FastAPI routers.
+- Learned the role of Uvicorn as the ASGI web server.
+- Built request and response schemas using Pydantic BaseModels.
+- Implemented centralized dependency management using FastAPI's dependency injection.
+- Built the PDF upload endpoint using `UploadFile`.
+- Connected the upload endpoint to `KnowledgeBaseService`.
+- Built the question-answer endpoint.
+- Connected the question-answer endpoint to `RAGService`.
+- Successfully uploaded and indexed PDFs through the API.
+- Successfully generated answers through the API using Swagger UI.
+- Completed end-to-end testing of the entire backend.
+
+### Concepts Learned
+- REST API architecture
+- API contracts
+- Pydantic BaseModel
+- Request & Response models
+- FastAPI Routers
+- Dependency Injection
+- `Depends`
+- Multipart form data
+- File uploads
+- Uvicorn
+- ASGI overview
+- HTTP request-response lifecycle
+- End-to-End (E2E) testing
+- Layered backend architecture
+- Separation of API layer and service layer
+
+### Files Added
+- `backend/app/api/__init__.py`
+- `backend/app/api/schemas.py`
+- `backend/app/api/dependencies.py`
+- `backend/app/api/upload.py`
+- `backend/app/api/qa.py`
+
+### Files Modified
+- `backend/app/main.py`
+- `backend/app/settings.py`
+- `backend/requirements.txt`
+
+### Git Commit
+```
+Expose RAG pipeline through FastAPI REST API
+```
+
+### Next Session
+- Build the frontend using React.
+- Connect the frontend with the FastAPI backend.
+- Learn CORS and frontend-backend communication.
+- Build a chat interface.
+- Upload PDFs from the frontend.
+- Ask questions from the frontend.

@@ -1,12 +1,11 @@
 from fastapi import FastAPI
 
-app = FastAPI()
+from app.api.upload import router as upload_router
+from app.api.qa import router as qa_router
 
+app = FastAPI(
+    title="AI PDF Research Assistant"
+)
 
-@app.get("/")
-def root():
-    return {
-        "message": "Welcome to the AI PDF Research Assistant!",
-        "status": "running",
-        "version": "0.1.0"
-    }
+app.include_router(upload_router)
+app.include_router(qa_router)

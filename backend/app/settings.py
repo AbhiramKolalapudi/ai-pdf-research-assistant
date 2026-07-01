@@ -9,6 +9,8 @@ class Settings(BaseSettings):
 
     chroma_db_path: str = "chroma_db"
 
+    upload_dir: str = "data/uploads"
+
     top_k: int = 5
     temperature: float = 0.2
 
